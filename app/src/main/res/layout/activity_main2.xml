@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.rezab.internediete.mainview.Main2Activity">
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:ellipsize="middle"
+        android:ems="0"
+        android:text="@string/login_name"
+        android:textSize="20sp"
+        tools:layout_editor_absoluteX="128dp"
+        tools:layout_editor_absoluteY="177dp" />
+</android.support.constraint.ConstraintLayout>

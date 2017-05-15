@@ -6,4 +6,6 @@ package com.example.rezab.internediete.maininteractor;
 
 public interface InterfaceMain2 {
     void next(int id);
+    void initView();
+    void setinfo(String title,String body);
 }

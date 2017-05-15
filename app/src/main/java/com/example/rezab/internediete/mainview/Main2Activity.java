@@ -25,13 +25,12 @@ import retrofit2.Response;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
-public class Main2Activity extends AppCompatActivity implements InterfaceMain2{
+public class Main2Activity extends AppCompatActivity implements InterfaceMain2 {
 
     private RecyclerView mRecyclerView;
     private ErAdapter mHomeAdapter;
     private Main2Interface mHomeInterface;
     private ArrayList<HomeModel> mHomeModel;
-
     private List<Retro> mExampleRetros;
     private static final String BASE_URL = "https://private-4e4159-qurrata.apiary-mock.com/";
     @Override
@@ -40,13 +39,13 @@ public class Main2Activity extends AppCompatActivity implements InterfaceMain2{
         setContentView(R.layout.activity_main2);
         Intent i = getIntent();
         setTitle("Selamat Datang "+i.getStringExtra("username"));
-        mHomeInterface = new HomePresenter(this);
+        mHomeInterface = new HomePresenter(this,this);
         mHomeModel = new ArrayList<>();
         mHomeInterface.showList(mHomeModel);
-        getData();
+        mHomeInterface.getData();
 
     }
-    private  void initView(){
+    public void initView(){
         mRecyclerView = (RecyclerView) findViewById(R.id.mRecyclerView);
         RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(Main2Activity.this);
         mRecyclerView.setLayoutManager(layoutManager);
@@ -54,35 +53,12 @@ public class Main2Activity extends AppCompatActivity implements InterfaceMain2{
         mHomeAdapter = new ErAdapter(this, mHomeModel);
         mRecyclerView.setAdapter(mHomeAdapter);
     }
-    public void getData(){
-        Retrofit retrofit = new Retrofit.Builder()
-                .baseUrl(BASE_URL)
-                .addConverterFactory(GsonConverterFactory.create())
-                .build();
 
-        ServiceApi serviceApi = retrofit.create(ServiceApi.class);
-        Call<List<Retro>> call = serviceApi.getData();
-        call.enqueue(new Callback<List<Retro>>() {
-            @Override
-            public void onResponse(Call<List<Retro>> call, Response<List<Retro>> response) {
-                mExampleRetros = response.body();
-                for (int i = 0; i < mExampleRetros.size() ; i++) {
-                    String judul = mExampleRetros.get(i).getJudul();
-                    String tipe = mExampleRetros.get(i).getTentang();
-                    mHomeModel.add(new HomeModel(judul,"Tipe :"+tipe,"CLICK FOR VIEW",""));
-
-                }
-                initView();
-            }
-
-            @Override
-            public void onFailure(Call<List<Retro>> call, Throwable t) {
-                Toast.makeText(Main2Activity.this, R.string.koneksierror, Toast.LENGTH_SHORT).show();
-            }
-        });
-
+    @Override
+    public void setinfo(String title, String body) {
 
     }
+
 
     @Override
     public void next(int id) {

@@ -23,7 +23,6 @@ import java.util.ArrayList;
 public class ErAdapter extends RecyclerView.Adapter<ErAdapter.ViewHolder> {
     private ArrayList<HomeModel> mhomemodels;
     private Context mContext;
-
     public ErAdapter( Context mContext, ArrayList<HomeModel> mhomemodels) {
         this.mhomemodels = mhomemodels;
         this.mContext = mContext;

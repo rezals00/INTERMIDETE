@@ -1,5 +1,8 @@
 package com.example.rezab.internediete.maininteractor;
 
+import android.view.View;
+
+import com.example.rezab.internediete.mainview.Main2Activity;
 import com.example.rezab.internediete.model.HomeModel;
 
 import java.util.ArrayList;
@@ -10,4 +13,5 @@ import java.util.ArrayList;
 
 public interface Main2Interface {
     void showList(ArrayList<HomeModel> homeModels);
+    void getData();
 }

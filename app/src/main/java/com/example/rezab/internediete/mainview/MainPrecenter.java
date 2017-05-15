@@ -1,7 +1,9 @@
 package com.example.rezab.internediete.mainview;
 import android.content.Intent;
+import android.content.res.Resources;
 import android.text.TextUtils;
 
+import com.example.rezab.internediete.R;
 import com.example.rezab.internediete.maininteractor.InterfacePresenter;
 import com.example.rezab.internediete.maininteractor.InterfaceMain;
 /**
@@ -10,7 +12,6 @@ import com.example.rezab.internediete.maininteractor.InterfaceMain;
 
 public class MainPrecenter implements InterfacePresenter{
     private InterfaceMain mInterface;
-
     public MainPrecenter(MainActivity mainActivity) {
             this.mInterface = mainActivity;
     }
@@ -20,7 +21,7 @@ public class MainPrecenter implements InterfacePresenter{
         if(TextUtils.isEmpty(username) || TextUtils.isEmpty(password)){
             mInterface.messageempty();
         } else {
-            if(username.toString().equals("reza1234")&& password.toString().equals("reza1234")) {
+            if(username.equals("reza1234")&& password.equals("reza1234")) {
                 mInterface.loginsukses(username);
             } else {
                 mInterface.messageinvalid();

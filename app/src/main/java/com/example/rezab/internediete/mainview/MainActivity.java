@@ -41,17 +41,17 @@ public class MainActivity extends AppCompatActivity implements InterfaceMain {
 
     @Override
     public void messageinvalid() {
-        Toast.makeText(this, "Username / Password Salah", Toast.LENGTH_SHORT).show();
+        Toast.makeText(this, R.string.logininvalid, Toast.LENGTH_SHORT).show();
     }
 
     @Override
     public void messageempty() {
-        Toast.makeText(this, "Username / Password Kosong", Toast.LENGTH_SHORT).show();
+        Toast.makeText(this, R.string.loginempty, Toast.LENGTH_SHORT).show();
     }
 
     @Override
     public void loginsukses(String username) {
-        Toast.makeText(this, "Login sukses ....", Toast.LENGTH_SHORT).show();
+        Toast.makeText(this, R.string.loginsukses, Toast.LENGTH_SHORT).show();
         Intent intent = new Intent(this,Main2Activity.class);
         intent.putExtra("username",username);
         startActivity(intent);

@@ -1,3 +1,9 @@
 <resources>
-    <dimen name="fab_margin">16dp</dimen>
+        <dimen name="paddingTop">55dp</dimen>
+        <dimen name="marginTop">101dp</dimen>
+        <dimen name="layout_margin">15dp</dimen>
+        <dimen name="layout_marginTop">10dp</dimen>
+        <dimen name="layout_marginBottom">83dp</dimen>
+        <dimen name="layout_marginStart">143dp</dimen>
+        <dimen name="layout">18dp</dimen>
 </resources>
